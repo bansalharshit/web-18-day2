@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai-signup</title>
+    <style>
+        form{
+            width: 30%;
+            margin: auto;
+            height: auto;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin-top: 100px;
+            border-radius: 15px;
+        }
+        input{
+            display: block;
+            margin: auto;
+            font-size: 25px;
+            width: 85%;
+            height: 60px;
+        }
+        h1{
+            text-align: center;
+        }
+        #midheading{
+            text-align: center;
+            
+        }
+        #button{
+            padding: 5px 110px 5px 110px;
+        }
+        #fotter{
+text-align: center;
+padding-bottom: 50px;
+        }
+        h3{
+            margin-left: 55px;
+        }
+        #signupheading{
+            margin-bottom: 50px;
+            padding-top: 50px;
+        }
+        #button:hover{
+            background-color: rgb(88, 88, 244);
+            color: white;
+            cursor: pointer;
+        
+        }
+        #button{
+border-radius: 10px;
+border: 0px;
+        }
+        #logo{
+            text-align: center;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="logo">
+<img src="https://www.travelocity.com/_dms/interstitial/logo.svg?locale=en_US&siteid=80001" alt="">
+
+    </div>
+    <hr>
+    <form action="">
+        <div id="signupheading">
+        <h1>Create an account</h1>
+    </div>
+    <h3>Full name</h3>
+    <input type="text" placeholder="Enter your full name" id="username"><br>
+    <h3>Email</h3>
+    <input type="email" placeholder="Enter email" id="useremail"><br>
+    <h3>Password</h3>
+    <input type="password" placeholder="Enter password" id="userpassword">
+    <div id="midheading"><br>
+    <p>By signning up,I accept the tarvelocity <a href="">Terms of Service</a> and acknoledge the <a href="">Privacy Policy</a></p><br>
+</div>
+    <input id="button" type="submit" value="Continue">
+    <div id="fotter"><br>
+        <p>Already have an account?<a href="signin.html">Sign In</a></p>
+    </div>
+    </form>
+</body>
+</html>
+<script>
+    var form=document.querySelector("form");
+    form.addEventListener("submit",function(event){
+event.preventDefault();
+var formdata={
+    username:form.username.value,
+    email:form.useremail.value,
+    password:form.userpassword.value
+}
+localStorage.setItem("userData",JSON.stringify(formdata))
+window.location.href="signin.html"
+    });
+    
+</script>
